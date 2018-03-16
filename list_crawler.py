@@ -97,12 +97,12 @@ def download_page_images(page_name): # 해당 페이지에 존재하는 모든 �
     browser.back()
 
 #-------------------------------------------------------------------------------------------
-if len(sys.argv) < 3:
+if len(sys.argv) < 3: #매개변수가 3개보다 작으면 종료
     print("enter 2 arg")
     sys.exit()
 
 rootdir = "C:\\radiopaedia" #저장 위치
-create_dir(rootdir)
+create_dir(rootdir) # 폴더 생성
 
 browser = webdriver.Chrome()
 
