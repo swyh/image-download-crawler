@@ -7,6 +7,7 @@
     - File name : Axial
  
 ### Requirements
+- fast network speed
 - python 3.5
 - Selenium
     - 웹앱을 테스트하는 framework
