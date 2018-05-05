@@ -7,8 +7,8 @@
     - File name : Axial
  
 ### Requirements
-- fast network speed
-- python 3.5
+- Fast network speed
+- Python 3.5
 - Selenium
     - 웹앱을 테스트하는 framework
     - webdriver api를 통해 운영체제에 설치된 chrome 등의 브라우저를 제어
