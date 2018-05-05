@@ -14,10 +14,10 @@
     - js로 렌더링이 완료된 후의 dom 결과물에 대해 접근이 가능
 
 ### Guide
-- 실행 시 사진을 저장할 페이지를 매개변수로 시작 페이지, 마지막 페이지를 입력
-    - ex) python list_crawler.py 1 10 (1 ~ 10page까지의 모든 사진을 저장합니다)
-- code내에 입력 된 rootdir에 사진이 분류되어 저장
+- download_list.py
+    - 실행 시 사진을 저장할 페이지를 매개변수로 시작 페이지, 마지막 페이지를 입력
+        - ex) python list_crawler.py 1 10 (1 ~ 10page까지의 모든 사진을 저장합니다)
+    - code내에 입력 된 rootdir에 사진이 분류되어 저장
 
-- web_crawler
-input : 
-output : 
+- download_page.py
+    - 매개변수로 크롤링할 page 주소를 입력
