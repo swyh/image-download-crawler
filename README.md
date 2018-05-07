@@ -8,7 +8,7 @@
     - code내에 입력 된 rootdir에 사진이 분류되어 저장
 
 - download_page.py
-    - 매개변수로 크롤링할 page 주소를 입력
+    - 매개변수로 크롤링할 page 주소를 입력
 
 ### Functionality
 - 아래 조건에 맞는 사진을 로컬저장소에 저장 
@@ -21,4 +21,4 @@
 - Selenium
     - 웹앱을 테스트하는 framework
     - webdriver api를 통해 운영체제에 설치된 chrome 등의 브라우저를 제어
-    - js로 렌더링이 완료된 후의 dom 결과물에 대해 접근이 가능
+    - js로 렌더링이 완료된 후의 dom 결과물에 대해 접근이 가능
