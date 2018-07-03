@@ -1,4 +1,7 @@
-![structure](./image/structure.JPG){:width=100px}
+<p align="center">
+    <img src="./image/structure.JPG", width="480">
+</p>
+
 ## image-download-crawler
 교육 웹 리소스인 [Radiopaedia](https://radiopaedia.org/cases/)에서 image를 조건에 맞게 자동으로 다운 받을 수 있는 web crawler
 
