@@ -132,12 +132,8 @@ def workPage():
             links[count] = 1
             sem.release()  # --------------------------------------------------------
 
-            print(current, "1")
             cur.execute("UPDATE Locations SET state = 'ING' WHERE address = ?", (current,))
-            print(current, "2")
-
             conn.commit()
-            print(current, "3")
 
             url = "https://radiopaedia.org" + current  # row[1]은 address에 대한 json 값
             print("--CT and MRI-- browser move---")
