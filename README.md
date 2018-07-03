@@ -13,10 +13,11 @@
 - data.sqlite
     - store_link.py를 통해 생성되는 sqlite
     - url과 state(NO, ING, YES) 저장
-        - state : 크롤링 완료 상태를 나타냄
+        - state는 크롤링 완료 상태를 나타냄
+        - 크롤링이 시작되면 ING, 완료되면 YES, 크롤링 중 비정상 종료시 NO로 돌아온다.
     
 - store_image.py
-    - Tread로 분할하여 속도 향상
+    - Thread로 분할하여 속도 향상
     - data.sqlite에서 크롤링 되지 않은 url에 대하여 크롤링 실행
     - 폴더를 세분화 하여 이미지 저장
       
