@@ -10,7 +10,7 @@ start = int(input("링크 저장할 시작 페이지 입력 : "))
 end = int(input("링크 저장할 마지막 페이지 입력 : "))
 
 
-conn = sqlite3.connect('data15.sqlite')
+conn = sqlite3.connect('data.sqlite')
 cur = conn.cursor()
 
 

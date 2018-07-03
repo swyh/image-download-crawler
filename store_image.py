@@ -109,7 +109,7 @@ def download_page_images(page_name, browser): # 해당 페이지에 존재하는
 
 def workPage():
     print("working thread")
-    conn = sqlite3.connect('data14.sqlite')
+    conn = sqlite3.connect('data.sqlite')
     cur = conn.cursor()
 
     #sem.acquire()
