@@ -109,21 +109,20 @@ def download_page_images(page_name, browser): # 해당 페이지에 존재하는
 
 def workPage():
     print("working thread")
-    conn = sqlite3.connect('data.sqlite')
+    conn = sqlite3.connect(data)
     cur = conn.cursor()
 
-    #sem.acquire()
-    cur.execute('SELECT * FROM Locations')  # DB query문 실행,timeout=1
-    #sem.release()
+    rows = cur.execute('SELECT * FROM Locations').fetchall()  # DB query문 실행,timeout=1
 
     try:
         browser = webdriver.Chrome()
         count = 0
 
-        for row in cur:
+        for row in rows:
             count = count + 1
             current = row[0]
             state = row[1]
+            print("current :", current)
 
             sem.acquire()  # critical section----------------------------------------
             if state != "NO" or links[count] == 1:
@@ -131,6 +130,7 @@ def workPage():
                 continue
             links[count] = 1
             sem.release()  # --------------------------------------------------------
+
 
             cur.execute("UPDATE Locations SET state = 'ING' WHERE address = ?", (current,))
             conn.commit()
@@ -156,18 +156,26 @@ def workPage():
 
     cur.close()
 
-
 #-------------------------------------------------------------------------------------------
 
 rootdir = "C:\\radiopaedia" #저장 위치
+data = "data.sqlite"
 create_dir(rootdir) # 폴더 생성
 
 
-links = [0]*10000 # 최대 링크 10000개까지 가능
+links = [0]*100000 # 최대 링크 100000개까지 가능
 threads = []
 sem = threading.Lock()
 
-print("thread의 개수를 입력하세요 (클수록 빠르지만 컴퓨터 자원이 많이 필요합니다.")
+conn = sqlite3.connect(data)
+cur = conn.cursor()
+cur.execute('SELECT state, count(state) FROM Locations GROUP BY state')  # DB query문 실행,timeout=1
+print("크롤링 된 개수")
+for row in cur:
+    print(row[0], ":", row[1])
+cur.close()
+
+print("thread의 개수를 입력하세요 (클수록 빠르지만 컴퓨터 자원이 많이 필요합니다.)")
 thread_count = int(input("입력 :"))
 
 for num in range(1, thread_count+1):
